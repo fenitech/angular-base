@@ -1,0 +1,20 @@
+<p>herores list!</p>
+
+<!--  mensaje que muestra al heroe borrado-->
+<h3 *ngIf="heroeBorrado; else nothingWasDeleted">
+  El heroe borrado es: {{heroeBorrado}}
+</h3>
+
+<ng-template #nothingWasDeleted>
+  <h3>
+    No se ha borrado ningun heroe
+  </h3>
+</ng-template>
+
+<!--boton para borrar heroe-->
+<button  *ngIF="heroes.length > 0" class="btn btn-danger" (click)="deleteHeroe()">Borrar heroe</button>
+
+<ul class="mt2 list-group">
+  <li *ngFor="let name of heroes">
+    {{name}}
+  </li>
